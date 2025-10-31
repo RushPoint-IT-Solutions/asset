@@ -1,1 +1,1 @@
-See https://snipe-it.readme.io/docs/docker for Docker information
+See https://AMS.readme.io/docs/docker for Docker information

@@ -210,7 +210,7 @@
     - name: Create scheduler cron job
       become: true
       cron:
-        name: "Snipe-IT Artisan Scheduler"
+        name: "AMS Artisan Scheduler"
         job: "/usr/bin/php {{ app_path }}/artisan schedule:run"
   handlers:
     - name: restart apache2

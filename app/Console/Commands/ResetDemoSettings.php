@@ -21,7 +21,7 @@ class ResetDemoSettings extends Command
      *
      * @var string
      */
-    protected $description = 'This will reset the Snipe-IT demo settings back to default. ';
+    protected $description = 'This will reset the AMS demo settings back to default. ';
 
     /**
      * Create a new command instance.
@@ -44,10 +44,10 @@ class ResetDemoSettings extends Command
         $this->info('Resetting the demo settings.');
         $settings = Setting::first();
         $settings->per_page = 20;
-        $settings->site_name = 'Snipe-IT Asset Management Demo';
+        $settings->site_name = 'AMS Asset Management Demo';
         $settings->auto_increment_assets = 1;
         $settings->logo = 'snipe-logo.png';
-        $settings->alert_email = 'service@snipe-it.io';
+        $settings->alert_email = 'service@AMS.io';
         $settings->login_note = 'Use `admin` / `password` to login to the demo.';
         $settings->header_color = null;
         $settings->label2_2d_type = 'QRCODE';

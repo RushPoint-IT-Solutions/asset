@@ -20,7 +20,7 @@ use Exception;
 
 /**
  * This controller handles all actions related to the ability for users
- * to view their own assets in the Snipe-IT Asset Management application.
+ * to view their own assets in the AMS Asset Management application.
  *
  * @version    v1.0
  */

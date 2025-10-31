@@ -22,11 +22,11 @@ permissions:
 
 jobs:
   codacy-security-scan:
-    # Ensure schedule job never runs on forked repos. It's only executed for 'grokability/snipe-it'
+    # Ensure schedule job never runs on forked repos. It's only executed for 'grokability/AMS'
     permissions:
       contents: read  # for actions/checkout to fetch code
       security-events: write  # for github/codeql-action/upload-sarif to upload SARIF results
-    if: (github.repository == 'grokability/snipe-it') || ((github.repository != 'grokability/snipe-it') && (github.event_name != 'schedule'))
+    if: (github.repository == 'grokability/AMS') || ((github.repository != 'grokability/AMS') && (github.event_name != 'schedule'))
     name: Codacy Security Scan
     runs-on: ubuntu-latest
     steps:

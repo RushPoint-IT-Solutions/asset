@@ -82,7 +82,7 @@ class CategoriesController extends Controller
 
         /*
          * This checks to see if we should override the Admin Setting to show archived assets in list.
-         * We don't currently use it within the Snipe-IT GUI, but will be useful for API integrations where they
+         * We don't currently use it within the AMS GUI, but will be useful for API integrations where they
          * may actually need to fetch assets that are archived.
          *
          * @see \App\Models\Category::showableAssets()

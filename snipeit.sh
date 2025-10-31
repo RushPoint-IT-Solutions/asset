@@ -1,21 +1,21 @@
 #!/bin/bash
 #/ Usage: snipeit.sh [-vh]
 #/
-#/ Install Snipe-IT open source asset management.
+#/ Install AMS open source asset management.
 #/
 #/ OPTIONS:
 #/   -v | --verbose    Enable verbose output.
 #/   -h | --help       Show this message.
 
 ######################################################
-#           Snipe-It Install Script                  #
+#           AMS Install Script                  #
 #          Script created by Mike Tucker             #
 #            mtucker6784@gmail.com                   #
 #                                                    #
 # Feel free to modify, but please give               #
 # credit where it's due. Thanks!                     #
 #                                                    #
-#         Updated Snipe-IT Install Script            #
+#         Updated AMS Install Script            #
 #          Update created by Aaron Myers             #
 # Change log                                         #
 # * verify support for Ubuntu 24.04 -> 25.04         #
@@ -175,12 +175,12 @@ create_virtualhost () {
 }
 
 create_user () {
-  echo "* Creating Snipe-IT user."
+  echo "* Creating AMS user."
 
   if [[ "$distro" == "Ubuntu" ]] || [[ "$distro" == "Debian" ]] || [[ "$distro" == "Raspbian" ]] ; then
-    /usr/sbin/adduser --quiet --disabled-password --gecos 'Snipe-IT User' "$APP_USER"
+    /usr/sbin/adduser --quiet --disabled-password --gecos 'AMS User' "$APP_USER"
   else
-    adduser -c "Snipe-IT User" "$APP_USER"
+    adduser -c "AMS User" "$APP_USER"
   fi
 
   # Add the user to the apache group so the app can write to any files apache
@@ -238,8 +238,8 @@ install_snipeit () {
   echo "* Creating MariaDB Database/User."
   mysql -u root --execute="CREATE DATABASE snipeit;CREATE USER snipeit_dbuser@localhost IDENTIFIED BY '$mysqluserpw'; GRANT ALL PRIVILEGES ON snipeit.* TO snipeit_dbuser@localhost;"
 
-  echo -e "\n\n* Cloning Snipe-IT from github to the web directory."
-  log "git clone https://github.com/grokability/snipe-it $APP_PATH" & pid=$!
+  echo -e "\n\n* Cloning AMS from github to the web directory."
+  log "git clone https://github.com/grokability/AMS $APP_PATH" & pid=$!
   progress
   pushd $APP_PATH
   git checkout master
@@ -249,7 +249,7 @@ install_snipeit () {
   cp "$APP_PATH/.env.example" "$APP_PATH/.env"
 
   #TODO escape SED delimiter in variables
-  sed -i '1 i\#Created By Snipe-it Installer' "$APP_PATH/.env"
+  sed -i '1 i\#Created By AMS Installer' "$APP_PATH/.env"
   sed -i "s|^\\(APP_TIMEZONE=\\).*|\\1$tzone|" "$APP_PATH/.env"
   sed -i "s|^\\(DB_HOST=\\).*|\\1localhost|" "$APP_PATH/.env"
   sed -i "s|^\\(DB_DATABASE=\\).*|\\1snipeit|" "$APP_PATH/.env"
@@ -350,7 +350,7 @@ echo '
 '
 
 echo ""
-echo "  Welcome to Snipe-IT Inventory Installer for CentOS, Rocky, Debian, and Ubuntu!"
+echo "  Welcome to AMS Inventory Installer for CentOS, Rocky, Debian, and Ubuntu!"
 echo ""
 echo "  Installation log located: $APP_LOG"
 echo ""
@@ -1024,7 +1024,7 @@ esac
 done
 
 echo ""
-echo "  ***Open http://$fqdn to login to Snipe-IT.***"
+echo "  ***Open http://$fqdn to login to AMS.***"
 echo ""
 echo ""
 echo "* Installation log located in $APP_LOG."

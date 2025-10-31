@@ -15,7 +15,7 @@ function url_get_contents ($Url) {
     }
     print("file_get_contents() failed, trying curl instead.\n");
     if (!function_exists('curl_init')){
-        die("cURL is not installed!\nThis is required for Snipe-IT as well as the upgrade script, so you will need to fix this before continuing.\nAborting upgrade...\n");
+        die("cURL is not installed!\nThis is required for AMS as well as the upgrade script, so you will need to fix this before continuing.\nAborting upgrade...\n");
     }
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $Url);
@@ -73,7 +73,7 @@ if ($argc > 1){
 }
 
 echo "\e[95m--------------------------------------------------------\n";
-echo "WELCOME TO THE SNIPE-IT UPGRADER! \n";
+echo "WELCOME TO THE AMS UPGRADER! \n";
 echo "--------------------------------------------------------\n\n";
 echo "This script will attempt to: \n\n";
 echo "- validate some very basic .env file settings \n";
@@ -86,8 +86,8 @@ echo "- run migrations to get your schema up to date \n";
 echo "- clear out old cache settings\e[39m\n\n";
 
 
-// Fetching most current upgrade requirements from github. Read more here: https://github.com/grokability/snipe-it/pull/14127
-$remote_requirements_file = "https://raw.githubusercontent.com/grokability/snipe-it/$branch/.upgrade_requirements.json";
+// Fetching most current upgrade requirements from github. Read more here: https://github.com/grokability/AMS/pull/14127
+$remote_requirements_file = "https://raw.githubusercontent.com/grokability/AMS/$branch/.upgrade_requirements.json";
 $upgrade_requirements_raw = url_get_contents($remote_requirements_file);
 $upgrade_requirements = json_decode($upgrade_requirements_raw, true);
 if (! $upgrade_requirements) {
@@ -271,8 +271,8 @@ if(!$skip_php_checks){
 
     } else {
         echo "\e[91m!!!!!!!!!!!!!!!!!!!!!!!!! PHP VERSION ERROR !!!!!!!!!!!!!!!!!!!!!!!!!\n";
-        echo "This version of PHP (".phpversion().") is NOT compatible with Snipe-IT.\n";
-        echo "Snipe-IT requires PHP versions between ".$php_min_works." and ".$php_max_wontwork.".\n";
+        echo "This version of PHP (".phpversion().") is NOT compatible with AMS.\n";
+        echo "AMS requires PHP versions between ".$php_min_works." and ".$php_max_wontwork.".\n";
         echo "Please install a compatible version of PHP and re-run this script again. \n";
         echo "\e[91m!!!!!!!!!!!!!!!!!!!!!!!!! ABORTING THE UPGRADER !!!!!!!!!!!!!!!!!!!!!!\n";
         exit(1);
@@ -449,7 +449,7 @@ if ((strpos('git version', $git_version)) === false) {
 } else {
     echo "Git is NOT installed. You can still use this upgrade script to run common \n";
     echo "migration commands, but you will have to manually download the updated files. \n\n";
-    echo "Please note that this script will not download the latest Snipe-IT \n";
+    echo "Please note that this script will not download the latest AMS \n";
     echo "files for you unless you have git installed. \n";
     echo "It simply runs the standard composer, artisan, and migration \n";
     echo "commands needed to finalize the upgrade after. \n\n";
@@ -541,7 +541,7 @@ echo "--------------------------------------------------------\e[39m\n\n";
 exec('php artisan down',  $down_results, $return_code);
 echo '-- ' . implode("\n", $down_results) . "\n";
 if ($return_code > 0) {
-    die("Something went wrong with downing your site. This can't be good. Please investigate the error and be sure to check https://snipe-it.readme.io/docs/common-issues and https://snipe-it.readme.io/docs/installation-issues for solutions to common upgrading issues. Aborting!\n\n");
+    die("Something went wrong with downing your site. This can't be good. Please investigate the error and be sure to check https://AMS.readme.io/docs/common-issues and https://AMS.readme.io/docs/installation-issues for solutions to common upgrading issues. Aborting!\n\n");
 }
 unset($return_code);
 
@@ -599,7 +599,7 @@ echo $success_icon.' '.trim($up)."\n\n";
 
 echo "\e[92m---------------------- FINISHED! -----------------------\n";
 echo "All done! Clear your browser cookies and re-login to use \n";
-echo "your upgraded Snipe-IT!\n";
+echo "your upgraded AMS!\n";
 echo "--------------------------------------------------------\e[39m\n\n";
 
 

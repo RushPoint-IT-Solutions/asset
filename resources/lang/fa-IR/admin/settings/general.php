@@ -146,13 +146,13 @@ return [
     'ldap_pw_sync_help'         => 'Uncheck this box if you do not wish to keep LDAP passwords cached as local hashed passwords. Disabling this means that your users may not be able to login if your LDAP server is unreachable for some reason.',
     'ldap_username_field'       => 'LDAP Username Field',
     'ldap_display_name'          => 'LDAP Display Name Field',
-    'ldap_display_name_help'    => 'If you have a separate displayName field in your LDAP/AD, map it here and it will be used for displaying users within Snipe-IT.',
+    'ldap_display_name_help'    => 'If you have a separate displayName field in your LDAP/AD, map it here and it will be used for displaying users within AMS.',
     'ldap_lname_field'          => 'LDAP Last Name Field',
     'ldap_fname_field'          => 'LDAP First Name Field',
     'ldap_auth_filter_query'    => 'تأیید اعتبار  پرس و جوLDAP',
     'ldap_version'              => 'نسخهٔ LDAP',
     'ldap_active_flag'          => ' پرچم فعالLDAP',
-    'ldap_activated_flag_help'  => 'This value is used to determine whether a synced user can login to Snipe-IT. <strong>It does not affect the ability to check items in or out to them</strong>, and should be the <strong>attribute name</strong> within your AD/LDAP, <strong>not the value</strong>. <br><br>If this field is set to a field name that does not exist in your AD/LDAP, or the value in the AD/LDAP field is set to <code>0</code> or <code>false</code>, <strong>user login will be disabled</strong>. If the value in the AD/LDAP field is set to <code>1</code> or <code>true</code> or <em>any other text</em> means the user can log in. When the field is blank in your AD, we respect the <code>userAccountControl</code> attribute, which usually allows non-suspended users to log in.',
+    'ldap_activated_flag_help'  => 'This value is used to determine whether a synced user can login to AMS. <strong>It does not affect the ability to check items in or out to them</strong>, and should be the <strong>attribute name</strong> within your AD/LDAP, <strong>not the value</strong>. <br><br>If this field is set to a field name that does not exist in your AD/LDAP, or the value in the AD/LDAP field is set to <code>0</code> or <code>false</code>, <strong>user login will be disabled</strong>. If the value in the AD/LDAP field is set to <code>1</code> or <code>true</code> or <em>any other text</em> means the user can log in. When the field is blank in your AD, we respect the <code>userAccountControl</code> attribute, which usually allows non-suspended users to log in.',
     'ldap_invert_active_flag'   => 'LDAP Invert Active Flag',
     'ldap_invert_active_flag_help'     => 'If enabled: when the value returned by LDAP Active Flag is <code>0</code> or <code>false</code> the user account will be active.',
     'ldap_emp_num'              => 'LDAP Employee Number Field',
@@ -169,7 +169,7 @@ return [
     'license'                   => 'مجوز نرم افزار
 ',
     'load_remote'               => 'Load Remote Avatars',
-    'load_remote_help_text'		=> 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent Snipe-IT from trying load avatars from Gravatar or other outside sources.',
+    'load_remote_help_text'		=> 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent AMS from trying load avatars from Gravatar or other outside sources.',
     'login'                     => 'تلاش برای ورود
 ',
     'login_attempt'             => 'تلاش برای ورود
@@ -195,7 +195,7 @@ return [
 ',
     'login_remote_user_custom_logout_url_text' => 'URL خروج سفارشی
 ',
-    'login_remote_user_custom_logout_url_help' => 'اگر یک URL در اینجا ارائه شود، پس از خروج کاربر از Snipe-IT، کاربران به این URL هدایت می شوند. این برای بستن صحیح جلسات کاربر ارائه دهنده احراز هویت شما مفید است.
+    'login_remote_user_custom_logout_url_help' => 'اگر یک URL در اینجا ارائه شود، پس از خروج کاربر از AMS، کاربران به این URL هدایت می شوند. این برای بستن صحیح جلسات کاربر ارائه دهنده احراز هویت شما مفید است.
 ',
     'login_remote_user_header_name_text' => 'هدر نام کاربری سفارشی
 ',
@@ -300,7 +300,7 @@ return [
     'show_assigned_assets_help' => 'دارایی هایی را که به سایر دارایی ها اختصاص داده شده اند در View User -> Assets، View User -> Info -> Print All Assigned و در Account -> View Assigned Assets نمایش دهید.
 ',
     'show_images_in_email'     => 'استفاده از عکس در ایمیل ها',
-    'show_images_in_email_help'   => 'اگر نصب Snipe-IT شما پشت VPN یا شبکه بسته است و کاربران خارج از شبکه نمی توانند تصاویر ارائه شده از این نصب را در ایمیل های خود بارگیری کنند، علامت این کادر را بردارید.
+    'show_images_in_email_help'   => 'اگر نصب AMS شما پشت VPN یا شبکه بسته است و کاربران خارج از شبکه نمی توانند تصاویر ارائه شده از این نصب را در ایمیل های خود بارگیری کنند، علامت این کادر را بردارید.
 ',
     'site_name'                 => 'نام سایت',
     'integrations'               => 'Integrations',
@@ -324,11 +324,11 @@ return [
     'snipe_version'  			=> 'نسخه Snipe_IT',
     'support_footer'            => 'پشتیبانی از پیوندهای پاورقی
 ',
-    'support_footer_help'       => 'مشخص کنید چه کسی پیوندهای اطلاعات پشتیبانی Snipe-IT و راهنمای کاربران را ببیند
+    'support_footer_help'       => 'مشخص کنید چه کسی پیوندهای اطلاعات پشتیبانی AMS و راهنمای کاربران را ببیند
 ',
     'version_footer'            => 'نسخه در پاورقی
 ',
-    'version_footer_help'       => 'مشخص کنید چه کسی نسخه و شماره ساخت Snipe-IT را ببیند.
+    'version_footer_help'       => 'مشخص کنید چه کسی نسخه و شماره ساخت AMS را ببیند.
 ',
     'system'                    => 'اطلاعات سیستم',
     'update'                    => 'به‌ روزرسانی تنظیمات',
@@ -362,8 +362,8 @@ return [
     'inches'        => 'اینچ',
     'width_w'        => 'عرض',
     'height_h'        => 'ارتفاع',
-    'show_url_in_emails'                => 'پیوند به Snipe-IT در ایمیل',
-    'show_url_in_emails_help_text'      => 'اگر نمیخواهید پیوند به نصب Snipe-IT خود را در زیرپوشهای ایمیل خود پیگیری کنید، این کادر را بردارید. مفید است اگر اکثر کاربران شما هرگز وارد نشده باشند.',
+    'show_url_in_emails'                => 'پیوند به AMS در ایمیل',
+    'show_url_in_emails_help_text'      => 'اگر نمیخواهید پیوند به نصب AMS خود را در زیرپوشهای ایمیل خود پیگیری کنید، این کادر را بردارید. مفید است اگر اکثر کاربران شما هرگز وارد نشده باشند.',
     'text_pt'        => 'بالای صفحه',
     'thumbnail_max_h'   => 'حداکثر ریز عکسها',
     'thumbnail_max_h_help'   => 'حداکثر ارتفاع در پیکسل هایی که کوچک می شوند ممکن است در نمای لیست نمایش داده شود. حداقل 25، حداکثر 500.',
@@ -425,7 +425,7 @@ return [
 ',
     'barcodes_help_overview' => 'بارکد &amp; تنظیمات QR
 ',
-    'barcodes_help' => 'با این کار سعی می شود بارکدهای کش شده را حذف کنید. این معمولاً فقط در صورتی استفاده می شود که تنظیمات بارکد شما تغییر کرده باشد، یا اگر URL Snipe-IT شما تغییر کرده باشد. در صورت دسترسی بعدی، بارکدها دوباره تولید خواهند شد.
+    'barcodes_help' => 'با این کار سعی می شود بارکدهای کش شده را حذف کنید. این معمولاً فقط در صورتی استفاده می شود که تنظیمات بارکد شما تغییر کرده باشد، یا اگر URL AMS شما تغییر کرده باشد. در صورت دسترسی بعدی، بارکدها دوباره تولید خواهند شد.
 ',
     'barcodes_spinner' => 'تلاش برای حذف فایل ها...
 ',
@@ -515,7 +515,7 @@ return [
     'purge_barcodes' => 'Purge Barcodes',
     'help_asterisk_bold'    => 'Text entered as <code>**text**</code> will be displayed as bold',
     'help_blank_to_use'     => 'Leave blank to use the value from <code>:setting_name</code>',
-    'help_default_will_use' => '<code>:default</code> will use the value from <code>:setting_name</code>. <br>Note that the value of the barcodes must comply with the respective barcode spec in order to be successfully generated. Please see <a href="https://snipe-it.readme.io/docs/barcodes">the documentation <i class="fa fa-external-link"></i></a> for more details. ',
+    'help_default_will_use' => '<code>:default</code> will use the value from <code>:setting_name</code>. <br>Note that the value of the barcodes must comply with the respective barcode spec in order to be successfully generated. Please see <a href="https://AMS.readme.io/docs/barcodes">the documentation <i class="fa fa-external-link"></i></a> for more details. ',
     'asset_id'              => 'Asset ID',
     'data'               => 'Data',
     'default'               => 'Default',

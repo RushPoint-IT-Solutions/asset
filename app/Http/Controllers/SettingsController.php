@@ -41,7 +41,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
  * This controller handles all actions related to Settings for
- * the Snipe-IT Asset Management application.
+ * the AMS Asset Management application.
  *
  * @version    v1.0
  */
@@ -418,7 +418,7 @@ class SettingsController extends Controller
                 $request->validate(['site_name' => 'required']);
             }
 
-            $setting->site_name = $request->input('site_name', 'Snipe-IT');
+            $setting->site_name = $request->input('site_name', 'AMS');
             $setting->custom_css = $request->input('custom_css');
 
             // Logo upload

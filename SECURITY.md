@@ -5,7 +5,7 @@ vulnerabilities as quickly as possible.
 
 ## Supported Versions
 
-We try to make a reasonable effort to support older versions of Snipe-IT, 
+We try to make a reasonable effort to support older versions of AMS, 
 however there are times when library dependencies and/or PHP/MySQL dependencies 
 make it impossible to backport security fixes on older versions. 
 

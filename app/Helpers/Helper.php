@@ -531,7 +531,7 @@ class Helper
          * 
          * WARNING: This does conversions based on *locale* - a Unix-ey-like thing.
          * 
-         * Everything else in the system tends to convert based on the Snipe-IT settings
+         * Everything else in the system tends to convert based on the AMS settings
          * 
          * So it's very likely this is *not* what you want - instead look for the new
          * 
@@ -1454,7 +1454,7 @@ class Helper
     /**
      * Conversion between units of measurement
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
+     * @author Grant Le Roux <grant.leroux+AMS@gmail.com>
      * @since 5.0
      * @param float  $value    Measurement value to convert
      * @param string $srcUnit  Source unit of measurement
@@ -1472,7 +1472,7 @@ class Helper
     /**
      * Get conversion factor from unit of measurement to mm
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
+     * @author Grant Le Roux <grant.leroux+AMS@gmail.com>
      * @since 5.0
      * @param string $unit  Unit of measurement
      * @return float

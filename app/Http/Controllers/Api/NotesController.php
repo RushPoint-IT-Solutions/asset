@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 
 /**
  * This class controls all API actions related to notes for
- * the Snipe-IT Asset Management application.
+ * the AMS Asset Management application.
  */
 class NotesController extends Controller
 {

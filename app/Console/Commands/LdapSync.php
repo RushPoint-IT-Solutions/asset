@@ -56,7 +56,7 @@ class LdapSync extends Command
         ini_set('memory_limit', env('LDAP_MEM_LIM', '500M'));
 
 
-        // Map the LDAP attributes to the Snipe-IT user fields.
+        // Map the LDAP attributes to the AMS user fields.
         $ldap_map = [
             "username" => Setting::getSettings()->ldap_username_field,
             "last_name" => Setting::getSettings()->ldap_lname_field,
@@ -242,7 +242,7 @@ class LdapSync extends Command
         }
 
 
-        // Assign the mapped LDAP attributes for each user to the Snipe-IT user fields
+        // Assign the mapped LDAP attributes for each user to the AMS user fields
         for ($i = 0; $i < $results['count']; $i++) {
             $item = [];
             $item['username'] = $results[$i][$ldap_map["username"]][0] ?? '';
